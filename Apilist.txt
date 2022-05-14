@@ -1,0 +1,48 @@
+
+//Note : Run On Browser
+
+User Account
+http://127.0.0.1:3000/useraccount
+
+User
+http://127.0.0.1:3000/user
+
+Policy
+http://127.0.0.1:3000/policy
+
+DOB
+http://127.0.0.1:3000/dob
+
+Agent
+http://127.0.0.1:3000/agent
+
+
+
+//Note : Run On Postman
+
+User Update
+http://127.0.0.1:3000/user/edit/:user_id
+
+User delete
+http://127.0.0.1:3000/user/delete/:user_id
+
+User get
+http://127.0.0.1:3000/get-user
+
+Account Update
+http://127.0.0.1:3000/account/edit/:account_id
+
+Account delete
+http://127.0.0.1:3000/account/delete/:account_id
+
+Account get
+http://127.0.0.1:3000/get-useraccount
+
+Policy Update
+http://127.0.0.1:3000/policy/edit/:policy_id
+
+Policy delete
+http://127.0.0.1:3000/policy/delete/:policy_id
+
+Policy get
+http://127.0.0.1:3000/get-policy

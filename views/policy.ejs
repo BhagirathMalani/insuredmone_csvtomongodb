@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>nodejs</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <a class="navbar-brand" href="#">Policy</a>
+    </nav>
+    <div class="container">
+        <div class=" nav justify-content-center" style="margin-top:100px;">
+            <div class="card border-warning mb-3 " style="max-width: 20rem;">
+                <div class="card-header">
+                    <h5>Upload csv file</h5>
+                </div>
+                <div class="card-body">
+                    <form action="/add-policy" method="post" enctype="multipart/form-data">
+                        <input type="file" name="csv"><br><br>
+                        <div class="text-center"><button type="submit" class="btn btn-lg btn-primary">submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><br>
+        <%if(data){%>
+            <div>
+                <table class="table table-hover table-responsive table-stripped  nav justify-content-center" style="width: auto">
+                    <thead>
+                        <tr class="bg-primary">
+                            <!-- <th>S.no</th> -->
+                            <th style="padding-right: 1em">Policy_number</th>
+                            <th style="padding-right: 1em">Policy_mode</th>
+                            <th style="padding-right:2em;padding-left:2em;">Policy_type</th>
+                            <th style="padding-right: 1em">Policy_start_date</th>
+                            <th style="padding-right: 1em">Policy_end_date</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody style="overflow-x: scroll; height:350px;" class="table-bordered">
+                        <%for(var i=0;i< data.length;i++){%>
+                            <tr class="text-center">
+
+                                <td style="padding-right: 1em">
+                                    <%= data[i].policy_number%>
+                                </td>
+                                <td style="padding-left: 1em;">
+                                    <%= data[i].policy_mode%>
+                                </td>
+                                <td style="padding-right:1em;padding-left:1em;">
+                                    <%= data[i].policy_type%>
+                                </td>
+                                <td style="padding-left: 1em">
+                                    <%= data[i].policy_start_date%>
+                                </td>
+                                <td style="padding-left: 1em">
+                                    <%= data[i].policy_end_date%>
+                                </td>
+                            </tr>
+                            <%}%>
+                    </tbody>
+                </table>
+            </div>
+            <%}%>
+                <br>
+</body>
+
+</html>

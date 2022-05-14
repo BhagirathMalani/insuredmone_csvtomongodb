@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>nodejs</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <a class="navbar-brand" href="#">User Account</a>
+    </nav>
+    <div class="container">
+        <div class=" nav justify-content-center" style="margin-top:100px;">
+            <div class="card border-warning mb-3 " style="max-width: 20rem;">
+                <div class="card-header">
+                    <h5>Upload CSV file</h5>
+                </div>
+                <div class="card-body">
+                    <form action="/add-useraccount" method="post" enctype="multipart/form-data">
+                        <input type="file" name="csv"><br><br>
+                        <div class="text-center"><button type="submit" class="btn btn-lg btn-primary">submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><br>
+        <%if(data){%>
+            <div>
+                <table class="table table-hover table-responsive table-stripped  nav justify-content-center" style="width: auto">
+                    <thead>
+                        <tr class="bg-primary">
+                            <!-- <th>S.no</th> -->
+                            <th style="padding-right: 1em">UserType</th>
+                            <th style="padding-right: 1em">producer</th>
+                            <th style="padding-right: 1em">premium_amount_written</th>
+                            <th style="padding-right: 1em">company_name</th>
+                            <th style="padding-right: 1em">category_name</th>
+                            <th style="padding-right: 1em">csr</th>
+                            <th style="padding-right: 1em">account_name</th>
+                            <th style="padding-right: 1em">account_type</th>
+
+                        </tr>
+                    </thead>
+                    <tbody style="overflow-x: scroll; height:350px;" class="table-bordered">
+                        <%for(var i=0;i< data.length;i++){%>
+                            <tr class="text-center">
+
+                                <td style="padding-right: 1em">
+                                    <%= data[i].userType%>
+                                </td>
+                                <td style="padding-left: 1em;">
+                                    <%= data[i].producer%>
+                                </td>
+                                <td style="padding-right:1em;padding-left:1em;">
+                                    <%= data[i].premium_amount_written%>
+                                </td>
+                                <td style="padding-left: 1em">
+                                    <%= data[i].company_name%>
+                                </td>
+                                <td style="padding-left: 1em">
+                                    <%= data[i].category_name%>
+                                </td>
+                                <td style="padding-left: 1em">
+                                    <%= data[i].csr%>
+                                </td>
+                                <td style="padding-left: 1.2em">
+                                    <%= data[i].account_name%>
+                                </td>
+                                <td style="padding-left: 1.2em">
+                                    <%= data[i].account_type%>
+                                </td>
+
+                            </tr>
+                            <%}%>
+                    </tbody>
+                </table>
+            </div>
+            <%}%>
+                <br>
+</body>
+
+</html>
